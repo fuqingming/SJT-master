@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="270dp"
+    android:layout_height="wrap_content"
+	android:orientation="vertical"
+    android:background="@drawable/shape_rectangle_dialog_edit_bg" >
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginTop="10dp"
+			android:text="手机验证"
+			android:textColor="@color/black"
+			android:textSize="@dimen/seventeen" />
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_marginLeft="15dp"
+			android:layout_marginTop="20dp">
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="手机号"
+				android:textSize="@dimen/thirteen"
+				android:textColor="@color/black_color"/>
+			<TextView
+				android:id="@+id/et_tel"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="@color/white_color"
+				android:textSize="@dimen/thirteen"
+				android:layout_marginLeft="10dp"
+				android:textColor="@color/black_color"
+				android:text="111111111"
+				/>
+		</LinearLayout>
+		<ImageView
+			android:layout_width="fill_parent"
+			android:layout_height="1dp"
+			android:layout_marginTop="10dp"
+			android:src="@color/spliter_line_color" />
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_marginLeft="15dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginBottom="10dp">
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="验证码"
+				android:textSize="@dimen/thirteen"
+				android:textColor="@color/black_color"/>
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp">
+
+				<EditText
+					android:id="@+id/et_verify_number"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_alignParentStart="true"
+					android:layout_alignParentTop="true"
+					android:background="@color/white_color"
+					android:hint="短信验证码"
+					android:inputType="number"
+					android:maxLength="4"
+					android:paddingRight="4dp"
+					android:textColor="@color/black"
+					android:textColorHint="@color/dark"
+					android:textSize="@dimen/thirteen" />
+				<RelativeLayout
+
+					android:layout_width="82dp"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical"
+					android:layout_alignParentRight="true"
+					android:layout_marginRight="15dp">
+
+					<TextView
+						android:id="@+id/tv_send_verify_code"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true"
+						android:gravity="center"
+						android:text="点击获取"
+						android:textColor="@color/red"
+						android:textSize="@dimen/twelve" />
+				</RelativeLayout>
+			</RelativeLayout>
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<!-- 水平分割线 -->
+		<ImageView
+			android:layout_width="fill_parent"
+			android:layout_height="1dp"
+			android:src="@color/spliter_line_color" />
+
+		<RelativeLayout
+			android:id="@+id/ll_two_button_area"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="20dp"
+			android:layout_marginTop="20dp">
+
+			<Button
+				android:id="@+id/btn_left"
+				android:layout_weight="1"
+				android:layout_width="wrap_content"
+				android:layout_height="43dp"
+				android:textSize="@dimen/sixteen"
+				android:text="取消"
+				android:gravity="center"
+				android:textColor="@color/black_color"
+				android:layout_marginLeft="10dp"
+				android:background="@drawable/shape_dialog_btn_left"/>
+
+			<Button
+				android:id="@+id/btn_right"
+				android:layout_weight="1"
+				android:layout_height="43dp"
+				android:layout_width="wrap_content"
+				android:gravity="center"
+				android:textSize="@dimen/sixteen"
+				android:textColor="@color/white_color"
+				android:text="确定"
+				android:layout_alignParentRight="true"
+				android:layout_marginRight="10dp"
+				android:background="@drawable/shape_dialog_btn_right"/>
+
+		</RelativeLayout>
+	</LinearLayout>
+
+</LinearLayout>

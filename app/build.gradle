@@ -1,0 +1,93 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        applicationId "com.qlzs.sjt"
+        minSdkVersion var.minSdkVersion
+        targetSdkVersion var.targetSdkVersion
+        versionCode var.versionCode
+        versionName var.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "赏金堂${defaultConfig.versionName}_${releaseTime()}.apk"
+                }
+            }
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+static def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("GMT+8"))
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    configurations.all {
+        resolutionStrategy.force 'com.android.support:support-annotations:26.1.0'
+    }
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+    //shardPrefrences
+    compile 'com.blankj:utilcode:1.9.0'
+    //http
+    compile 'com.tamic.novate:novate:1.5.5'
+
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'com.github.jdsjlzx:LRecyclerView:1.3.8'
+    compile 'jp.wasabeef:recyclerview-animators:2.2.3'
+    compile 'com.kaopiz:kprogresshud:1.1.0'
+
+    //图片处理
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+
+    //imageTrans
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.4.0'
+    //imageTrans end
+
+    //RxGalleryFinal
+    compile 'cn.finalteam.rxgalleryfinal:library:1.1.3'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.facebook.fresco:fresco:1.5.0'
+    //RxGalleryFinal end
+
+    //日期，地址选择器
+    compile 'com.github.addappcn:android-pickers:1.0.3'
+    compile 'com.alibaba:fastjson:1.1.56.android'
+    //日期，地址选择器 end
+
+    //导航栏
+    compile 'com.nineoldandroids:library:2.4.0'
+
+    compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.0'
+
+    compile project(':imagetrans')
+}
