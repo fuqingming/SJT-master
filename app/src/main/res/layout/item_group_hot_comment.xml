@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/white_color"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    >
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:background="@color/dark"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/iv_icon"
+        android:text="走路带风"
+        android:textColor="@color/black_color"
+        android:textSize="@dimen/fourteen" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="还差"
+                    android:textSize="@dimen/thirteen"
+                    android:textColor="@color/black_color"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_person_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/red_color"
+                    android:textSize="@dimen/thirteen" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="人"
+                    android:textSize="@dimen/thirteen"
+                    android:textColor="@color/red_color"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="拼成"
+                    android:textSize="@dimen/thirteen"
+                    android:textColor="@color/black_color"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="剩余"
+                    android:textSize="@dimen/eleven"
+                    android:textColor="@color/infoTextColor"/>
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22:50:32"
+                    android:textColor="@color/infoTextColor"
+                    android:textSize="@dimen/eleven" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_btn"
+            android:layout_width="76dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_rectangle_btn_red"
+            android:gravity="center"
+            android:text="去拼单"
+            android:textColor="@color/white_color"
+            android:textSize="@dimen/thirteen" />
+    </LinearLayout>
+</RelativeLayout>
